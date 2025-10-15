@@ -1,4 +1,4 @@
--- Load Rayfield UI (official) local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
 local Window = Rayfield:CreateWindow({ Name = "Aimbot Hub", LoadingTitle = "Loading...", ConfigurationSaving = { Enabled = true, FolderName = "AimbotHub", FileName = "Settings" }, Discord = { Enabled = false, }, })
 
@@ -12,9 +12,11 @@ local function isOnSameTeam(player) return LocalPlayer.Team and player.Team and 
 
 local function canSeeTarget(character) local origin = Camera.CFrame.Position local targetPart = character:FindFirstChild("HumanoidRootPart") if not targetPart then return false end local rayParams = RaycastParams.new() rayParams.FilterDescendantsInstances = {LocalPlayer.Character} rayParams.FilterType = Enum.RaycastFilterType.Blacklist local result = Workspace:Raycast(origin, (targetPart.Position - origin), rayParams) return not result or result.Instance:IsDescendantOf(character) end
 
--- Tabs local AimbotTab = Window:CreateTab("Aimbot") local MovementTab = Window:CreateTab("Movement")
+-- Tabs local 
+AimbotTab = Window:CreateTab("Aimbot") local MovementTab = Window:CreateTab("Movement")
 
--- Aimbot Controls AimbotTab:CreateToggle({ Name = "Enable Aimbot", CurrentValue = AimbotEnabled, Callback = function(v) AimbotEnabled = v end, })
+-- Aimbot Controls 
+AimbotTab:CreateToggle({ Name = "Enable Aimbot", CurrentValue = AimbotEnabled, Callback = function(v) AimbotEnabled = v end, })
 
 AimbotTab:CreateDropdown({ Name = "Lock On Part", Options = {"Head", "HumanoidRootPart"}, CurrentOption = LockPart, Callback = function(opt) LockPart = opt end, })
 
@@ -24,13 +26,15 @@ AimbotTab:CreateToggle({ Name = "Wall Check", CurrentValue = WallCheck, Callback
 
 AimbotTab:CreateToggle({ Name = "Movement Prediction", CurrentValue = PredictMovement, Callback = function(v) PredictMovement = v end, })
 
--- Movement Controls MovementTab:CreateSlider({ Name = "WalkSpeed", Range = {0, 500}, Increment = 1, CurrentValue = WalkSpeed, Callback = function(v) WalkSpeed = v local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") if hum then hum.WalkSpeed = WalkSpeed end end, })
+-- Movement Controls
+MovementTab:CreateSlider({ Name = "WalkSpeed", Range = {0, 500}, Increment = 1, CurrentValue = WalkSpeed, Callback = function(v) WalkSpeed = v local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") if hum then hum.WalkSpeed = WalkSpeed end end, })
 
 MovementTab:CreateSlider({ Name = "JumpPower", Range = {0, 500}, Increment = 1, CurrentValue = JumpPower, Callback = function(v) JumpPower = v local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") if hum then hum.JumpPower = JumpPower end end, })
 
 MovementTab:CreateToggle({ Name = "Noclip", CurrentValue = NoclipEnabled, Callback = function(value) NoclipEnabled = value if value then noclipConnection = RunService.Stepped:Connect(function() if LocalPlayer.Character then for _, part in ipairs(LocalPlayer.Character:GetChildren()) do if part:IsA("BasePart") then part.CanCollide = false end end end end) elseif noclipConnection then noclipConnection:Disconnect() noclipConnection = nil end end, })
 
--- Smoother Aimbot Logic RunService.RenderStepped:Connect(function() if not AimbotEnabled then return end
+--Smoother Aimbot Logic-- 
+RunService.RenderStepped:Connect(function() if not AimbotEnabled then return end
 
 local closestTarget, closestDistance = nil, math.huge
 for _, player in ipairs(Players:GetPlayers()) do
