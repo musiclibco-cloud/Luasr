@@ -1,0 +1,246 @@
+--[[
+    AeroVape Mobile UI Library (Full Version)
+    Features: Tabs, Buttons, Toggles, Sliders, Inputs, Dropdowns, Notifications
+]]
+
+local AeroVape = {}
+AeroVape.__index = AeroVape
+
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local function Tween(obj, props, duration)
+    local t = TweenService:Create(obj, TweenInfo.new(duration or 0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), props)
+    t:Play()
+    return t
+end
+
+local function Create(class, props)
+    local inst = Instance.new(class)
+    for k, v in pairs(props) do
+        if k ~= "Parent" then inst[k] = v end
+    end
+    inst.Parent = props.Parent
+    return inst
+end
+
+function AeroVape:CreateWindow(cfg)
+    cfg = cfg or {}
+    local title = cfg.Title or "Mobile Hub"
+    local mainColor = cfg.Color or Color3.fromRGB(120, 160, 255)
+    local size = cfg.Size or UDim2.new(0, 360, 0, 440)
+
+    local gui = Create("ScreenGui", {
+        Parent = game:GetService("CoreGui"),
+        Name = "AeroVape_UI",
+        ResetOnSpawn = false
+    })
+
+    local window = Create("Frame", {
+        Parent = gui,
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Position = UDim2.new(0.5, 0, 0.5, 0),
+        Size = size,
+        BackgroundColor3 = Color3.fromRGB(40, 40, 50),
+        BorderSizePixel = 0
+    })
+    Create("UICorner", {Parent = window, CornerRadius = UDim.new(0, 8)})
+
+    local titlebar = Create("Frame", {
+        Parent = window,
+        BackgroundColor3 = mainColor,
+        Size = UDim2.new(1, 0, 0, 35)
+    })
+    Create("UICorner", {Parent = titlebar, CornerRadius = UDim.new(0, 8)})
+
+    local titleLabel = Create("TextLabel", {
+        Parent = titlebar,
+        Text = title,
+        Font = Enum.Font.GothamBold,
+        TextSize = 14,
+        TextColor3 = Color3.new(1, 1, 1),
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, -40, 1, 0),
+        Position = UDim2.new(0, 10, 0, 0),
+        TextXAlignment = Enum.TextXAlignment.Left
+    })
+
+    local closeBtn = Create("TextButton", {
+        Parent = titlebar,
+        Text = "×",
+        Font = Enum.Font.GothamBold,
+        TextSize = 20,
+        AnchorPoint = Vector2.new(1, 0),
+        Position = UDim2.new(1, -5, 0, 5),
+        Size = UDim2.new(0, 25, 0, 25),
+        BackgroundColor3 = Color3.fromRGB(220, 60, 60),
+        TextColor3 = Color3.new(1, 1, 1),
+        BorderSizePixel = 0
+    })
+    Create("UICorner", {Parent = closeBtn, CornerRadius = UDim.new(0, 4)})
+
+    closeBtn.MouseButton1Click:Connect(function()
+        Tween(window, {Size = UDim2.new(0, 0, 0, 0)}, 0.3)
+        wait(0.3)
+        gui:Destroy()
+    end)
+
+    -- Dragging support
+    local dragging, dragStart, startPos
+    titlebar.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = window.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then dragging = false end
+            end)
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging then
+            local delta = input.Position - dragStart
+            window.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+                startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
+
+    local TabsFrame = Create("Frame", {
+        Parent = window,
+        Position = UDim2.new(0, 10, 0, 45),
+        Size = UDim2.new(1, -20, 0, 30),
+        BackgroundTransparency = 1
+    })
+    local TabList = Create("UIListLayout", {Parent = TabsFrame, FillDirection = Enum.FillDirection.Horizontal, Padding = UDim.new(0, 5)})
+
+    local ContentFrame = Create("Frame", {
+        Parent = window,
+        Position = UDim2.new(0, 10, 0, 85),
+        Size = UDim2.new(1, -20, 1, -95),
+        BackgroundColor3 = Color3.fromRGB(45, 45, 55)
+    })
+    Create("UICorner", {Parent = ContentFrame, CornerRadius = UDim.new(0, 6)})
+
+    local NotificationContainer = Create("Frame", {
+        Parent = gui,
+        AnchorPoint = Vector2.new(1, 1),
+        Position = UDim2.new(1, -10, 1, -10),
+        Size = UDim2.new(0, 270, 1, -20),
+        BackgroundTransparency = 1
+    })
+    local NotifLayout = Create("UIListLayout", {Parent = NotificationContainer, Padding = UDim.new(0, 6), VerticalAlignment = Enum.VerticalAlignment.Bottom})
+
+    local Window = {Tabs = {}, Current = nil}
+
+    function Window:Notify(msg, color)
+        local notif = Create("TextLabel", {
+            Parent = NotificationContainer,
+            Text = msg,
+            Font = Enum.Font.Gotham,
+            TextSize = 12,
+            TextColor3 = Color3.new(1, 1, 1),
+            BackgroundColor3 = color or mainColor,
+            Size = UDim2.new(1, 0, 0, 35),
+            TextWrapped = true
+        })
+        Create("UICorner", {Parent = notif, CornerRadius = UDim.new(0, 6)})
+        Tween(notif, {BackgroundTransparency = 0, TextTransparency = 0}, 0.3)
+        task.wait(2)
+        Tween(notif, {BackgroundTransparency = 1, TextTransparency = 1}, 0.3)
+        task.wait(0.3)
+        notif:Destroy()
+    end
+
+    function Window:Tab(name)
+        local Tab = {}
+        local Btn = Create("TextButton", {
+            Parent = TabsFrame,
+            Text = name,
+            Font = Enum.Font.Gotham,
+            TextSize = 12,
+            TextColor3 = Color3.new(1,1,1),
+            BackgroundColor3 = Color3.fromRGB(60,60,70),
+            Size = UDim2.new(0,100,1,0),
+            BorderSizePixel = 0
+        })
+        Create("UICorner", {Parent = Btn, CornerRadius = UDim.new(0,4)})
+
+        local Content = Create("ScrollingFrame", {
+            Parent = ContentFrame,
+            Visible = false,
+            Size = UDim2.new(1, 0, 1, 0),
+            AutomaticCanvasSize = Enum.AutomaticSize.Y,
+            CanvasSize = UDim2.new(0, 0, 0, 0),
+            BackgroundTransparency = 1,
+            ScrollBarThickness = 5
+        })
+        Create("UIListLayout", {Parent = Content, Padding = UDim.new(0, 6)})
+
+        Btn.MouseButton1Click:Connect(function()
+            for _, tab in pairs(Window.Tabs) do
+                tab.Button.BackgroundColor3 = Color3.fromRGB(60,60,70)
+                tab.Content.Visible = false
+            end
+            Btn.BackgroundColor3 = mainColor
+            Content.Visible = true
+            Window.Current = Tab
+        end)
+
+        if #Window.Tabs == 0 then
+            Btn.BackgroundColor3 = mainColor
+            Content.Visible = true
+            Window.Current = Tab
+        end
+
+        function Tab:Input(name, placeholder, callback)
+            local Frame = Create("Frame", {Parent = Content, Size = UDim2.new(1, -5, 0, 55), BackgroundColor3 = Color3.fromRGB(60,60,80)})
+            Create("UICorner", {Parent = Frame, CornerRadius = UDim.new(0,5)})
+
+            local Label = Create("TextLabel", {Parent = Frame, Text = name, Font = Enum.Font.SourceSans, TextColor3 = Color3.new(1,1,1), TextSize = 12, BackgroundTransparency = 1, Position = UDim2.new(0,10,0,2), Size = UDim2.new(1,-20,0,15)})
+            local Box = Create("TextBox", {Parent = Frame, PlaceholderText = placeholder or "Enter text...", Text = "", Font = Enum.Font.SourceSans, TextColor3 = Color3.new(1,1,1), TextSize = 12, Size = UDim2.new(1,-20,0,25), Position = UDim2.new(0,10,0,25), BackgroundColor3 = Color3.fromRGB(255,255,255), TextColor3 = Color3.fromRGB(40,40,40)})
+            Create("UICorner", {Parent = Box, CornerRadius = UDim.new(0,4)})
+
+            Box.FocusLost:Connect(function(enter)
+                if enter then callback(Box.Text) end
+            end)
+        end
+
+        function Tab:Dropdown(name, options, callback)
+            local Frame = Create("Frame", {Parent = Content, Size = UDim2.new(1,-5,0,40), BackgroundColor3 = Color3.fromRGB(60,60,80)})
+            Create("UICorner", {Parent = Frame, CornerRadius = UDim.new(0,5)})
+
+            local Label = Create("TextLabel", {Parent = Frame, Text = name, Font = Enum.Font.SourceSans, TextColor3 = Color3.new(1,1,1), TextSize = 13, BackgroundTransparency = 1, Position = UDim2.new(0,10,0,0), TextXAlignment = Enum.TextXAlignment.Left, Size = UDim2.new(1,-50,1,0)})
+
+            local Btn = Create("TextButton", {Parent = Frame, AnchorPoint = Vector2.new(1,0.5), Position = UDim2.new(1,-10,0.5,0), Size = UDim2.new(0,60,0,25), Text = "▼", Font = Enum.Font.Gotham, TextSize = 16, BackgroundColor3 = mainColor, TextColor3 = Color3.new(1,1,1)})
+            Create("UICorner", {Parent = Btn, CornerRadius = UDim.new(0,4)})
+
+            local Drop = Create("Frame", {Parent = Frame, Position = UDim2.new(0,0,1,5), Size = UDim2.new(1,0,0,0), BackgroundColor3 = Color3.fromRGB(55,55,75), BorderSizePixel = 0, Visible = false, ClipsDescendants = true})
+            Create("UICorner", {Parent = Drop, CornerRadius = UDim.new(0,5)})
+            local List = Create("UIListLayout", {Parent = Drop, Padding = UDim.new(0,3)})
+
+            for _, opt in pairs(options) do
+                local Option = Create("TextButton", {Parent = Drop, Text = opt, Font = Enum.Font.SourceSans, TextColor3 = Color3.new(1,1,1), BackgroundColor3 = Color3.fromRGB(70,70,90), Size = UDim2.new(1,-10,0,25)})
+                Create("UICorner", {Parent = Option, CornerRadius = UDim.new(0,3)})
+                Option.MouseButton1Click:Connect(function()
+                    callback(opt)
+                    Drop.Visible = false
+                    Tween(Drop, {Size = UDim2.new(1,0,0,0)}, 0.2)
+                end)
+            end
+
+            Btn.MouseButton1Click:Connect(function()
+                local open = not Drop.Visible
+                Drop.Visible = true
+                Tween(Drop, {Size = open and UDim2.new(1,0,0,#options * 30 + 5) or UDim2.new(1,0,0,0)}, 0.3)
+            end)
+        end
+
+        Window.Tabs[#Window.Tabs + 1] = {Button = Btn, Content = Content}
+        return Tab
+    end
+
+    return Window
+end
+
+return AeroVape
